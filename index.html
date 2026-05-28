@@ -201,7 +201,7 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
   <div class="about-grid fade-up">
     <div class="about-text">
       <p>I am a <strong>Computer Science (Computing Infrastructure)</strong> student at Universiti Sains Malaysia, working toward a career in <strong>Digital Forensics and Cybersecurity</strong>. I am drawn to the investigative side of security — understanding how attacks work and building tools to detect them.</p>
-      <p>My approach is hands-on. I compete in CTF competitions, build tools that solve real problems, and study the threats actually affecting people around me — like the APK-based banking scams targeting Malaysians every day.</p>
+      <p>My approach is hands-on. I compete in CTF competitions, build tools that solve real problems, and study the threats actually affecting people around me, like the APK-based banking scams targeting Malaysians every day.</p>
       <p>Currently on industrial training and freshly certified with <strong>CompTIA Security+</strong>, with daily practice on TryHackMe to keep skills sharp.</p>
     </div>
     
@@ -254,7 +254,7 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
   <div class="section-label" style="justify-content:center">07 · Contact</div>
   <h2 class="section-title" style="text-align:center">Let's Connect</h2>
   <div class="contact-inner fade-up">
-    <p>I'm currently on industrial training and open to connecting with professionals in cybersecurity and digital forensics — especially in Malaysia. If you have opportunities, feedback on my projects, or just want to talk security, reach out.</p>
+    <p>I'm currently on industrial training and open to connecting with professionals in cybersecurity and digital forensics, especially in Malaysia. If you have opportunities, feedback on my projects, or just want to talk security, reach out.</p>
     <div class="contact-links">
       <a href="mailto:alif2004ridzuan@gmail.com" class="contact-link">Email</a>
       <a href="https://www.linkedin.com/in/alifridzuan" target="_blank" class="contact-link">LinkedIn</a>
@@ -316,10 +316,31 @@ const PORTFOLIO_DATA = {
       links: [{ url: "#", text: "Details", featured: false }]
     }
   ],
-  competitions: [
-    { rank: "TOP<br>12", rankStyle: "", name: "NERaca 3.0 CTF", org: "Cyres USM", skills: ["Web Exploitation", "SQL Injection", "Digital Forensics"] },
-    { rank: "FINALIST", rankStyle: "font-size:22px;padding-top:6px", name: "NEXSEC 2025", org: "MCMC · Intervarsity Cyber Forensics", skills: ["Volatility 3", "Memory Forensics", "Malware Analysis", "C2 Detection"] },
-    { rank: "COMPETED", rankStyle: "font-size:22px;padding-top:6px", name: "BINGO CTF", org: "Asia Pacific University (APU)", skills: ["Web Exploitation", "Digital Forensics", "OSINT"] }
+ competitions: [
+    { 
+      rank: "TOP<br>12", 
+      rankStyle: "", 
+      name: "NERaca 3.0 CTF", 
+      org: "Cyres USM", 
+      image: "", // Add your image path here
+      skills: ["Web Exploitation", "SQL Injection", "Digital Forensics"] 
+    },
+    { 
+      rank: "FINALIST", 
+      rankStyle: "font-size:22px;padding-top:6px", 
+      name: "NEXSEC 2025", 
+      org: "MCMC · Intervarsity Cyber Forensics", 
+      image: "", // Add your image path here
+      skills: ["Volatility 3", "Memory Forensics", "Malware Analysis", "C2 Detection"] 
+    },
+    { 
+      rank: "COMPETED", 
+      rankStyle: "font-size:22px;padding-top:6px", 
+      name: "BINGO CTF", 
+      org: "Asia Pacific University (APU)", 
+      image: "Images/CTF.JPG", // Leave blank if you don't have one
+      skills: ["Web Exploitation", "Digital Forensics", "OSINT"] 
+    }
   ],
   certifications: [
     {
@@ -359,7 +380,7 @@ const PORTFOLIO_DATA = {
       ]
     },
     {
-      date: "Ongoing",
+      date: "2022 – 2023",
       title: "Media & Technical Executive",
       company: "Majlis Penghuni Desasiswa Indah Kembara",
       bullets: [
@@ -407,10 +428,13 @@ function renderPortfolio() {
     </div>
   `).join('');
 
-  // Render Competitions
+ // Render Competitions
   document.getElementById('competitions-container').innerHTML = PORTFOLIO_DATA.competitions.map(c => `
     <div class="comp-card">
       <div class="comp-rank" style="${c.rankStyle}">${c.rank}</div>
+      
+      ${c.image ? `<img src="${c.image}" alt="${c.name}" class="comp-image">` : ''}
+      
       <div class="comp-name">${c.name}</div>
       <div class="comp-org">${c.org}</div>
       <div class="comp-skills">${c.skills.map(skill => `<span class="comp-skill">${skill}</span>`).join('')}</div>
