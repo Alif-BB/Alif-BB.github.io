@@ -71,7 +71,8 @@ section{padding:100px 60px;position:relative;z-index:1}
 
 #about{background:var(--bg2)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.about-portrait{width:100%;border-radius:8px;border:1px solid var(--accent-border);display:block;margin-bottom:24px;object-fit:cover;aspect-ratio:3/4;max-height:420px}
+.about-left{display:flex;flex-direction:column}
+.about-portrait{width:100%;border-radius:8px;border:1px solid var(--accent-border);display:block;margin-bottom:24px;object-fit:cover;object-position:top;aspect-ratio:3/4;max-height:420px}
 .about-text p{font-size:16px;color:var(--text2);line-height:1.8;margin-bottom:20px}
 .about-text p strong{color:var(--text)}
 .about-info{display:flex;flex-direction:column;gap:16px}
@@ -149,7 +150,7 @@ section{padding:100px 60px;position:relative;z-index:1}
 .exp-bullets{list-style:none}
 .exp-bullets li{font-size:14px;color:var(--text2);line-height:1.7;padding:4px 0 4px 20px;position:relative}
 .exp-bullets li::before{content:'›';position:absolute;left:0;color:var(--accent);font-size:16px}
-.exp-image{width:100%;border-radius:6px;border:1px solid var(--accent-border);margin-top:16px;object-fit:cover;aspect-ratio:16/9}
+.exp-image{width:60%;border-radius:6px;border:1px solid var(--accent-border);margin-top:16px;object-fit:cover;aspect-ratio:16/9;display:block}
 
 #contact{background:var(--bg);text-align:center}
 .contact-inner{max-width:600px;margin:0 auto}
@@ -211,12 +212,14 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
   <div class="section-label">01 · About</div>
   <h2 class="section-title">Who I Am</h2>
   <div class="about-grid fade-up">
-    <div class="about-text">
+    <div class="about-left">
       <!-- PORTRAIT IMAGE -->
       <img src="Images/potrait.jpg" alt="Mohamad Alif Ridzuan" class="about-portrait">
-      <p>I am a <strong>Computer Science (Computing Infrastructure)</strong> student at Universiti Sains Malaysia, working toward a career in <strong>Digital Forensics and Cybersecurity</strong>. I am drawn to the investigative side of security — understanding how attacks work and building tools to detect them.</p>
-      <p>My approach is hands-on. I compete in CTF competitions, build tools that solve real problems, and study the threats actually affecting people around me, like the APK-based banking scams targeting Malaysians every day.</p>
-      <p>Currently on industrial training and freshly certified with <strong>CompTIA Security+</strong>, with daily practice on TryHackMe to keep skills sharp.</p>
+      <div class="about-text">
+        <p>I am a <strong>Computer Science (Computing Infrastructure)</strong> student at Universiti Sains Malaysia, working toward a career in <strong>Digital Forensics and Cybersecurity</strong>. I am drawn to the investigative side of security — understanding how attacks work and building tools to detect them.</p>
+        <p>My approach is hands-on. I compete in CTF competitions, build tools that solve real problems, and study the threats actually affecting people around me, like the APK-based banking scams targeting Malaysians every day.</p>
+        <p>Currently on industrial training and freshly certified with <strong>CompTIA Security+</strong>, with daily practice on TryHackMe to keep skills sharp.</p>
+      </div>
     </div>
     
     <div class="about-info" id="about-info-container"></div>
@@ -455,7 +458,7 @@ function renderPortfolio() {
         <div class="cert-issuer-logo">${c.issuer}</div>
         <div class="cert-status"><span class="cert-status-dot"></span>${c.status}</div>
       </div>
-      <img src="${c.image}" alt="${c.issuer} ${c.name} Certificate" style="width:100%;border-radius:4px;margin-bottom:16px">
+      <img src="${c.image}" alt="${c.issuer} ${c.name} Certificate" style="width:70%;display:block;margin:0 auto 16px;border-radius:4px">
       <div class="cert-name">${c.name}</div>
       <div class="cert-series">${c.series}</div>
       <div class="cert-divider"></div>
