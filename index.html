@@ -31,6 +31,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 60px;display:fl
 .nav-links a{font-family:var(--mono);font-size:11px;color:var(--text2);text-decoration:none;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.2s}
 .nav-links a:hover{color:var(--accent)}
 
+.comp-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* Keeps all images at a consistent rectangle ratio */
+  object-fit: cover; /* Prevents stretching */
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid var(--accent-border); /* Adds a subtle glowing border */
+}
+
 #hero{min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative;z-index:1;background-image:url('Images/Banner.jpg');background-size:cover}
 #hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(8,12,15,0.92) 0%,rgba(8,12,15,0.75) 50%,rgba(8,12,15,0.4) 100%);z-index:0;pointer-events:none}
 #hero .hero-inner{position:relative;z-index:1}
@@ -161,15 +171,7 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
   .cert-meta{grid-template-columns:1fr}
 }
 
-.comp-image {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9; /* Keeps all images at a consistent rectangle ratio */
-  object-fit: cover; /* Prevents stretching */
-  border-radius: 4px;
-  margin-bottom: 16px;
-  border: 1px solid var(--accent-border); /* Adds a subtle glowing border */
-}
+
 
 </style>
 </head>
