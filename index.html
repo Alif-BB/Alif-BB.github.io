@@ -160,6 +160,17 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
   .hero-stats{gap:32px}footer{flex-direction:column;gap:8px;text-align:center}
   .cert-meta{grid-template-columns:1fr}
 }
+
+.comp-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* Keeps all images at a consistent rectangle ratio */
+  object-fit: cover; /* Prevents stretching */
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid var(--accent-border); /* Adds a subtle glowing border */
+}
+
 </style>
 </head>
 <body>
