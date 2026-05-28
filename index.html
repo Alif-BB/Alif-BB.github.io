@@ -184,11 +184,9 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
     <div class="hero-tag">Cybersecurity · Digital Forensics · USM</div>
     <h1 class="hero-name">Mohamad<br>Alif <span>Ridzuan</span></h1>
     <div class="hero-role"><span id="typewriter"></span><span class="blink"></span></div>
-    <div class="hero-stats">
-      <div class="stat-item"><div class="stat-num">3.70</div><div class="stat-label">CGPA</div></div>
-      <div class="stat-item"><div class="stat-num">3x</div><div class="stat-label">CTF Competitions</div></div>
-      <div class="stat-item"><div class="stat-num">10s</div><div class="stat-label">APK Triage Time</div></div>
-    </div>
+    
+    <div class="hero-stats" id="stats-container"></div>
+    
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects</a>
       <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -206,216 +204,50 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
       <p>My approach is hands-on. I compete in CTF competitions, build tools that solve real problems, and study the threats actually affecting people around me — like the APK-based banking scams targeting Malaysians every day.</p>
       <p>Currently on industrial training and freshly certified with <strong>CompTIA Security+</strong>, with daily practice on TryHackMe to keep skills sharp.</p>
     </div>
-    <div class="about-info">
-      <div class="info-row"><span class="info-key">Degree</span><span class="info-val">B.Sc Computer Science (Computing Infrastructure)</span></div>
-      <div class="info-row"><span class="info-key">University</span><span class="info-val">Universiti Sains Malaysia (USM)</span></div>
-      <div class="info-row"><span class="info-key">CGPA</span><span class="info-val">3.70 · Dean's List</span></div>
-      <div class="info-row"><span class="info-key">Grad</span><span class="info-val">Expected 2027</span></div>
-      <div class="info-row"><span class="info-key">Focus</span><span class="info-val">Digital Forensics · Malware Analysis</span></div>
-      <div class="info-row"><span class="info-key">Location</span><span class="info-val">Penang, Malaysia</span></div>
-    </div>
+    
+    <div class="about-info" id="about-info-container"></div>
+    
   </div>
 </section>
 
 <section id="skills">
   <div class="section-label">02 · Skills</div>
   <h2 class="section-title">Technical Stack</h2>
-  <div class="skills-grid fade-up">
-    <div class="skill-card">
-      <div class="skill-card-icon">// forensics</div>
-      <h3>Digital Forensics</h3>
-      <div class="skill-tags"><span class="tag">Volatility 3</span><span class="tag">Memory Analysis</span><span class="tag">Androguard</span><span class="tag">APKTool</span><span class="tag">Static Analysis</span><span class="tag">Wireshark</span><span class="tag">Malware Triage</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">// security</div>
-      <h3>Cybersecurity</h3>
-      <div class="skill-tags"><span class="tag">Web Exploitation</span><span class="tag">SQL Injection</span><span class="tag">OSINT</span><span class="tag">CTF</span><span class="tag">C2 Analysis</span><span class="tag">TryHackMe</span><span class="tag">CompTIA Sec+</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">// development</div>
-      <h3>Programming</h3>
-      <div class="skill-tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">Streamlit</span><span class="tag">Regex</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">// infrastructure</div>
-      <h3>Networking & Systems</h3>
-      <div class="skill-tags"><span class="tag">Linux</span><span class="tag">Cisco Packet Tracer</span><span class="tag">TCP/IP</span><span class="tag">Network Design</span><span class="tag">Routing & Switching</span><span class="tag">Kali Linux</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">// tooling</div>
-      <h3>Tools & Platforms</h3>
-      <div class="skill-tags"><span class="tag">Git / GitHub</span><span class="tag">VS Code</span><span class="tag">ReportLab</span><span class="tag">MalwareBazaar</span><span class="tag">Linux VM</span><span class="tag">Graphic Editing</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">// soft skills</div>
-      <h3>Professional</h3>
-      <div class="skill-tags"><span class="tag">Project Management</span><span class="tag">Technical Writing</span><span class="tag">Leadership</span><span class="tag">English (Fluent)</span><span class="tag">Bahasa Melayu</span></div>
-    </div>
-  </div>
+  
+  <div class="skills-grid fade-up" id="skills-container"></div>
+  
 </section>
 
 <section id="projects">
   <div class="section-label">03 · Projects</div>
   <h2 class="section-title">Things I've Built</h2>
 
-  <div class="project-item fade-up">
-    <div>
-      <div class="project-badge"><span class="badge-dot"></span>Active Development · Personal Project</div>
-      <h3>Automated Android Malware Triage Framework</h3>
-      <p>A Python-based static analysis tool that automatically triage malicious APKs targeting Malaysian banking customers. Detects dangerous permissions, extracts hardcoded C2 IPs, Telegram bot tokens, and banking keywords using custom regex patterns. Risk scoring engine aggregates findings into CLEAN to CRITICAL classifications. Results delivered via a local Streamlit dashboard with one-click PDF forensic report export. Reduces manual triage time from 30-60 minutes to under 10 seconds.</p>
-      <div class="project-stack"><span class="tag">Python</span><span class="tag">Androguard</span><span class="tag">APKTool</span><span class="tag">Streamlit</span><span class="tag">ReportLab</span><span class="tag">Regex</span><span class="tag">Git</span></div>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/Alif-BB/apk-triage" target="_blank" class="project-link featured">GitHub &rarr;</a>
-    </div>
-  </div>
+  <div id="projects-container"></div>
 
-  <div class="project-item fade-up">
-    <div>
-      <div class="project-badge">Academic Project</div>
-      <h3>Network Topology Design & Configuration</h3>
-      <p>Designed and simulated a small-scale network infrastructure with structured IP addressing using Cisco Packet Tracer. Configured routing and switching, then captured and analyzed live network traffic using Wireshark, followed by a comprehensive technical report.</p>
-      <div class="project-stack"><span class="tag">Cisco Packet Tracer</span><span class="tag">Wireshark</span><span class="tag">TCP/IP</span><span class="tag">Network Design</span></div>
-    </div>
-    <div class="project-links"><a href="#" class="project-link">Details</a></div>
-  </div>
-
-  <div class="project-item fade-up">
-    <div>
-      <div class="project-badge">Academic Project</div>
-      <h3>Cybersecurity Management Practices Report</h3>
-      <p>Conducted a structured observation of a real office environment, evaluating existing cybersecurity practices against industry standards. Produced a formal report including identified vulnerabilities, risk evaluation, and actionable security recommendations.</p>
-      <div class="project-stack"><span class="tag">Security Audit</span><span class="tag">Risk Assessment</span><span class="tag">Technical Writing</span></div>
-    </div>
-    <div class="project-links"><a href="#" class="project-link">Details</a></div>
-  </div>
 </section>
 
 <section id="competitions">
   <div class="section-label">04 · Competitions</div>
   <h2 class="section-title">CTF & Challenges</h2>
-  <div class="comp-grid fade-up">
-    <div class="comp-card">
-      <div class="comp-rank">TOP<br>12</div>
-      <div class="comp-name">NERaca 3.0 CTF</div>
-      <div class="comp-org">Cyres USM</div>
-      <div class="comp-skills"><span class="comp-skill">Web Exploitation</span><span class="comp-skill">SQL Injection</span><span class="comp-skill">Digital Forensics</span></div>
-    </div>
-    <div class="comp-card">
-      <div class="comp-rank" style="font-size:22px;padding-top:6px">FINALIST</div>
-      <div class="comp-name">NEXSEC 2025</div>
-      <div class="comp-org">MCMC · Intervarsity Cyber Forensics</div>
-      <div class="comp-skills"><span class="comp-skill">Volatility 3</span><span class="comp-skill">Memory Forensics</span><span class="comp-skill">Malware Analysis</span><span class="comp-skill">C2 Detection</span></div>
-    </div>
-    <div class="comp-card">
-      <div class="comp-rank" style="font-size:22px;padding-top:6px">COMPETED</div>
-      <div class="comp-name">BINGO CTF</div>
-      <div class="comp-org">Asia Pacific University (APU)</div>
-      <div class="comp-skills"><span class="comp-skill">Web Exploitation</span><span class="comp-skill">Digital Forensics</span><span class="comp-skill">OSINT</span></div>
-    </div>
-  </div>
+  
+  <div class="comp-grid fade-up" id="competitions-container"></div>
+  
 </section>
 
-<!-- ─── CERTIFICATIONS SECTION ─────────────────────────────────────────── -->
 <section id="certifications">
   <div class="section-label">05 · Certifications</div>
   <h2 class="section-title">Credentials</h2>
-  <div class="cert-grid fade-up">
+  
+  <div class="cert-grid fade-up" id="certifications-container"></div>
 
-    <!-- CompTIA Security+ -->
-    <div class="cert-card">
-      <div class="cert-card-top">
-        <div class="cert-issuer-logo">CompTIA</div>
-        <div class="cert-status"><span class="cert-status-dot"></span>Active</div>
-      </div>
-      <img src="Images/comptia-security-ce-certification.png" alt="CompTIA Security+ Certificate" style="width:100%;border-radius:4px;margin-bottom:16px">
-      <div class="cert-name">Security+</div>
-      <div class="cert-series">Plus Series · SY0-701</div>
-      <div class="cert-divider"></div>
-      <div class="cert-meta">
-        <div class="cert-meta-item">
-          <div class="cert-meta-label">Issued</div>
-          <div class="cert-meta-val">Apr 18, 2026</div>
-        </div>
-        <div class="cert-meta-item">
-          <div class="cert-meta-label">Valid Through</div>
-          <div class="cert-meta-val">Apr 18, 2029</div>
-        </div>
-        <div class="cert-meta-item">
-          <div class="cert-meta-label">Candidate ID</div>
-          <div class="cert-meta-val">COMP001023031757</div>
-        </div>
-        <div class="cert-meta-item">
-          <div class="cert-meta-label">Exam</div>
-          <div class="cert-meta-val">SY0-701</div>
-        </div>
-      </div>
-      <div class="cert-id-row">
-        <div class="cert-id-label">Verification Code</div>
-        <div class="cert-id-val">f84561fc80bf4c17b3416a8426e9261c</div>
-      </div>
-      <div class="cert-skills">
-        <span class="cert-skill-tag">Threat Intelligence</span>
-        <span class="cert-skill-tag">Vulnerability Mgmt</span>
-        <span class="cert-skill-tag">Incident Response</span>
-        <span class="cert-skill-tag">Cryptography</span>
-        <span class="cert-skill-tag">Network Security</span>
-        <span class="cert-skill-tag">Identity & Access</span>
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-  <a href="https://alif-bb.github.io/CompTIA%20Security%2B%20ce%20certificate.pdf" 
-     target="_blank" 
-     class="cert-verify" 
-     style="background:var(--accent-dim);border-color:var(--accent);color:var(--accent)">
-    View Certificate ↗
-  </a>
-  <a href="http://verify.CompTIA.org" target="_blank" class="cert-verify">Verify ↗</a>
-</div>
-    </div>
-
-  </div>
 </section>
-<!-- ──────────────────────────────────────────────────────────────────────── -->
 
 <section id="experience">
   <div class="section-label">06 · Experience</div>
   <h2 class="section-title">Where I've Been</h2>
-  <div class="fade-up">
-    <div class="exp-item">
-      <div class="exp-date">Mar 2026 –<br>Aug 2026</div>
-      <div class="exp-content">
-        <h3>Industrial Training</h3>
-        <div class="exp-company">Awantec · Cybersecurity Division</div>
-        <ul class="exp-bullets">
-          <li>Applying academic cybersecurity knowledge in a professional environment</li>
-          <li>Developing personal security tooling alongside industry work</li>
-          <li>Studying CompTIA Security+ and completing TryHackMe labs</li>
-        </ul>
-      </div>
-    </div>
-    <div class="exp-item">
-      <div class="exp-date">2023 – 2025</div>
-      <div class="exp-content">
-        <h3>Part-Time Printing Assistant</h3>
-        <div class="exp-company">Better Print</div>
-        <ul class="exp-bullets">
-          <li>Operated and maintained printing equipment</li>
-          <li>Managed customer orders under time constraints while maintaining quality</li>
-        </ul>
-      </div>
-    </div>
-    <div class="exp-item">
-      <div class="exp-date">Ongoing</div>
-      <div class="exp-content">
-        <h3>Media & Technical Executive</h3>
-        <div class="exp-company">Majlis Penghuni Desasiswa Indah Kembara</div>
-        <ul class="exp-bullets">
-          <li>Designed visual materials for organizational outreach</li>
-          <li>Handled PA systems, live-streaming broadcasts, and projector setups</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  
+  <div class="fade-up" id="experience-container"></div>
+  
 </section>
 
 <section id="contact">
@@ -438,7 +270,203 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
 </footer>
 
 <script>
-// Cursor
+// 1. THE CONFIGURATION OBJECT
+const PORTFOLIO_DATA = {
+  stats: [
+    { num: "3.70", label: "CGPA" },
+    { num: "3x", label: "CTF Competitions" },
+    { num: "10s", label: "APK Triage Time" }
+  ],
+  aboutInfo: [
+    { key: "Degree", val: "B.Sc Computer Science (Computing Infrastructure)" },
+    { key: "University", val: "Universiti Sains Malaysia (USM)" },
+    { key: "CGPA", val: "3.70 · Dean's List" },
+    { key: "Grad", val: "Expected 2027" },
+    { key: "Focus", val: "Digital Forensics · Malware Analysis" },
+    { key: "Location", val: "Penang, Malaysia" }
+  ],
+  skills: [
+    { icon: "// forensics", title: "Digital Forensics", tags: ["Volatility 3", "Memory Analysis", "Androguard", "APKTool", "Static Analysis", "Wireshark", "Malware Triage"] },
+    { icon: "// security", title: "Cybersecurity", tags: ["Web Exploitation", "SQL Injection", "OSINT", "CTF", "C2 Analysis", "TryHackMe", "CompTIA Sec+"] },
+    { icon: "// development", title: "Programming", tags: ["Python", "JavaScript", "C++", "Java", "SQL", "Streamlit", "Regex"] },
+    { icon: "// infrastructure", title: "Networking & Systems", tags: ["Linux", "Cisco Packet Tracer", "TCP/IP", "Network Design", "Routing & Switching", "Kali Linux"] },
+    { icon: "// tooling", title: "Tools & Platforms", tags: ["Git / GitHub", "VS Code", "ReportLab", "MalwareBazaar", "Linux VM", "Graphic Editing"] },
+    { icon: "// soft skills", title: "Professional", tags: ["Project Management", "Technical Writing", "Leadership", "English (Fluent)", "Bahasa Melayu"] }
+  ],
+  projects: [
+    {
+      badge: "<span class=\"badge-dot\"></span>Active Development · Personal Project",
+      title: "Automated Android Malware Triage Framework",
+      desc: "A Python-based static analysis tool that automatically triage malicious APKs targeting Malaysian banking customers. Detects dangerous permissions, extracts hardcoded C2 IPs, Telegram bot tokens, and banking keywords using custom regex patterns. Risk scoring engine aggregates findings into CLEAN to CRITICAL classifications. Results delivered via a local Streamlit dashboard with one-click PDF forensic report export. Reduces manual triage time from 30-60 minutes to under 10 seconds.",
+      stack: ["Python", "Androguard", "APKTool", "Streamlit", "ReportLab", "Regex", "Git"],
+      links: [{ url: "https://github.com/Alif-BB/apk-triage", text: "GitHub &rarr;", featured: true }]
+    },
+    {
+      badge: "Academic Project",
+      title: "Network Topology Design & Configuration",
+      desc: "Designed and simulated a small-scale network infrastructure with structured IP addressing using Cisco Packet Tracer. Configured routing and switching, then captured and analyzed live network traffic using Wireshark, followed by a comprehensive technical report.",
+      stack: ["Cisco Packet Tracer", "Wireshark", "TCP/IP", "Network Design"],
+      links: [{ url: "#", text: "Details", featured: false }]
+    },
+    {
+      badge: "Academic Project",
+      title: "Cybersecurity Management Practices Report",
+      desc: "Conducted a structured observation of a real office environment, evaluating existing cybersecurity practices against industry standards. Produced a formal report including identified vulnerabilities, risk evaluation, and actionable security recommendations.",
+      stack: ["Security Audit", "Risk Assessment", "Technical Writing"],
+      links: [{ url: "#", text: "Details", featured: false }]
+    }
+  ],
+  competitions: [
+    { rank: "TOP<br>12", rankStyle: "", name: "NERaca 3.0 CTF", org: "Cyres USM", skills: ["Web Exploitation", "SQL Injection", "Digital Forensics"] },
+    { rank: "FINALIST", rankStyle: "font-size:22px;padding-top:6px", name: "NEXSEC 2025", org: "MCMC · Intervarsity Cyber Forensics", skills: ["Volatility 3", "Memory Forensics", "Malware Analysis", "C2 Detection"] },
+    { rank: "COMPETED", rankStyle: "font-size:22px;padding-top:6px", name: "BINGO CTF", org: "Asia Pacific University (APU)", skills: ["Web Exploitation", "Digital Forensics", "OSINT"] }
+  ],
+  certifications: [
+    {
+      issuer: "CompTIA",
+      status: "Active",
+      image: "Images/comptia-security-ce-certification.png",
+      name: "Security+",
+      series: "Plus Series · SY0-701",
+      issued: "Apr 18, 2026",
+      validThrough: "Apr 18, 2029",
+      candidateId: "COMP001023031757",
+      exam: "SY0-701",
+      verifyCode: "f84561fc80bf4c17b3416a8426e9261c",
+      skills: ["Threat Intelligence", "Vulnerability Mgmt", "Incident Response", "Cryptography", "Network Security", "Identity & Access"],
+      certLink: "https://alif-bb.github.io/CompTIA%20Security%2B%20ce%20certificate.pdf",
+      verifyLink: "http://verify.CompTIA.org"
+    }
+  ],
+  experience: [
+    {
+      date: "Mar 2026 –<br>Aug 2026",
+      title: "Industrial Training",
+      company: "Awantec · Cybersecurity Division",
+      bullets: [
+        "Applying academic cybersecurity knowledge in a professional environment",
+        "Developing personal security tooling alongside industry work",
+        "Studying CompTIA Security+ and completing TryHackMe labs"
+      ]
+    },
+    {
+      date: "2023 – 2025",
+      title: "Part-Time Printing Assistant",
+      company: "Better Print",
+      bullets: [
+        "Operated and maintained printing equipment",
+        "Managed customer orders under time constraints while maintaining quality"
+      ]
+    },
+    {
+      date: "Ongoing",
+      title: "Media & Technical Executive",
+      company: "Majlis Penghuni Desasiswa Indah Kembara",
+      bullets: [
+        "Designed visual materials for organizational outreach",
+        "Handled PA systems, live-streaming broadcasts, and projector setups"
+      ]
+    }
+  ]
+};
+
+// 2. RENDERING LOGIC
+function renderPortfolio() {
+  
+  // Render Stats
+  document.getElementById('stats-container').innerHTML = PORTFOLIO_DATA.stats.map(s => `
+    <div class="stat-item"><div class="stat-num">${s.num}</div><div class="stat-label">${s.label}</div></div>
+  `).join('');
+
+  // Render About Info
+  document.getElementById('about-info-container').innerHTML = PORTFOLIO_DATA.aboutInfo.map(i => `
+    <div class="info-row"><span class="info-key">${i.key}</span><span class="info-val">${i.val}</span></div>
+  `).join('');
+
+  // Render Skills
+  document.getElementById('skills-container').innerHTML = PORTFOLIO_DATA.skills.map(s => `
+    <div class="skill-card">
+      <div class="skill-card-icon">${s.icon}</div>
+      <h3>${s.title}</h3>
+      <div class="skill-tags">${s.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+    </div>
+  `).join('');
+
+  // Render Projects
+  document.getElementById('projects-container').innerHTML = PORTFOLIO_DATA.projects.map(p => `
+    <div class="project-item fade-up">
+      <div>
+        <div class="project-badge">${p.badge}</div>
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+        <div class="project-stack">${p.stack.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+      </div>
+      <div class="project-links">
+        ${p.links.map(l => `<a href="${l.url}" class="project-link ${l.featured ? 'featured' : ''}" ${l.url.startsWith('http') ? 'target="_blank"' : ''}>${l.text}</a>`).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  // Render Competitions
+  document.getElementById('competitions-container').innerHTML = PORTFOLIO_DATA.competitions.map(c => `
+    <div class="comp-card">
+      <div class="comp-rank" style="${c.rankStyle}">${c.rank}</div>
+      <div class="comp-name">${c.name}</div>
+      <div class="comp-org">${c.org}</div>
+      <div class="comp-skills">${c.skills.map(skill => `<span class="comp-skill">${skill}</span>`).join('')}</div>
+    </div>
+  `).join('');
+
+  // Render Certifications
+  document.getElementById('certifications-container').innerHTML = PORTFOLIO_DATA.certifications.map(c => `
+    <div class="cert-card">
+      <div class="cert-card-top">
+        <div class="cert-issuer-logo">${c.issuer}</div>
+        <div class="cert-status"><span class="cert-status-dot"></span>${c.status}</div>
+      </div>
+      <img src="${c.image}" alt="${c.issuer} ${c.name} Certificate" style="width:100%;border-radius:4px;margin-bottom:16px">
+      <div class="cert-name">${c.name}</div>
+      <div class="cert-series">${c.series}</div>
+      <div class="cert-divider"></div>
+      <div class="cert-meta">
+        <div class="cert-meta-item"><div class="cert-meta-label">Issued</div><div class="cert-meta-val">${c.issued}</div></div>
+        <div class="cert-meta-item"><div class="cert-meta-label">Valid Through</div><div class="cert-meta-val">${c.validThrough}</div></div>
+        <div class="cert-meta-item"><div class="cert-meta-label">Candidate ID</div><div class="cert-meta-val">${c.candidateId}</div></div>
+        <div class="cert-meta-item"><div class="cert-meta-label">Exam</div><div class="cert-meta-val">${c.exam}</div></div>
+      </div>
+      <div class="cert-id-row">
+        <div class="cert-id-label">Verification Code</div>
+        <div class="cert-id-val">${c.verifyCode}</div>
+      </div>
+      <div class="cert-skills">
+        ${c.skills.map(skill => `<span class="cert-skill-tag">${skill}</span>`).join('')}
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <a href="${c.certLink}" target="_blank" class="cert-verify" style="background:var(--accent-dim);border-color:var(--accent);color:var(--accent)">View Certificate ↗</a>
+        <a href="${c.verifyLink}" target="_blank" class="cert-verify">Verify ↗</a>
+      </div>
+    </div>
+  `).join('');
+
+  // Render Experience
+  document.getElementById('experience-container').innerHTML = PORTFOLIO_DATA.experience.map(e => `
+    <div class="exp-item">
+      <div class="exp-date">${e.date}</div>
+      <div class="exp-content">
+        <h3>${e.title}</h3>
+        <div class="exp-company">${e.company}</div>
+        <ul class="exp-bullets">
+          ${e.bullets.map(b => `<li>${b}</li>`).join('')}
+        </ul>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Render dynamic content *before* setting up the IntersectionObserver
+renderPortfolio();
+
+// Cursor Logic
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 
@@ -449,12 +477,13 @@ document.addEventListener('mousemove', function(e) {
   ring.style.top = e.clientY + 'px';
 });
 
+// Since we dynamically injected links/buttons, we have to attach hover listeners afterward
 document.querySelectorAll('a, button').forEach(function(el) {
   el.addEventListener('mouseenter', function() { cursor.classList.add('hover'); ring.classList.add('hover'); });
   el.addEventListener('mouseleave', function() { cursor.classList.remove('hover'); ring.classList.remove('hover'); });
 });
 
-// Typewriter
+// Typewriter Logic
 var roles = [
   'Digital Forensics Enthusiast',
   'Malware Analyst (in progress)',
@@ -478,11 +507,12 @@ function type() {
 }
 type();
 
-// Scroll fade-in
+// Scroll fade-in (IntersectionObserver)
 var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.15 });
 
+// Observe the original and newly injected `.fade-up` elements
 document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
 </script>
 </body>
