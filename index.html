@@ -34,11 +34,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 60px;display:fl
 .comp-image {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9; /* Keeps all images at a consistent rectangle ratio */
-  object-fit: cover; /* Prevents stretching */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 4px;
   margin-bottom: 16px;
-  border: 1px solid var(--accent-border); /* Adds a subtle glowing border */
+  border: 1px solid var(--accent-border);
 }
 
 #hero{min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative;z-index:1;background-image:url('Images/Banner.jpg');background-size:cover}
@@ -71,6 +71,7 @@ section{padding:100px 60px;position:relative;z-index:1}
 
 #about{background:var(--bg2)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.about-portrait{width:100%;border-radius:8px;border:1px solid var(--accent-border);display:block;margin-bottom:24px;object-fit:cover;aspect-ratio:3/4;max-height:420px}
 .about-text p{font-size:16px;color:var(--text2);line-height:1.8;margin-bottom:20px}
 .about-text p strong{color:var(--text)}
 .about-info{display:flex;flex-direction:column;gap:16px}
@@ -148,6 +149,7 @@ section{padding:100px 60px;position:relative;z-index:1}
 .exp-bullets{list-style:none}
 .exp-bullets li{font-size:14px;color:var(--text2);line-height:1.7;padding:4px 0 4px 20px;position:relative}
 .exp-bullets li::before{content:'›';position:absolute;left:0;color:var(--accent);font-size:16px}
+.exp-image{width:100%;border-radius:6px;border:1px solid var(--accent-border);margin-top:16px;object-fit:cover;aspect-ratio:16/9}
 
 #contact{background:var(--bg);text-align:center}
 .contact-inner{max-width:600px;margin:0 auto}
@@ -170,9 +172,6 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
   .hero-stats{gap:32px}footer{flex-direction:column;gap:8px;text-align:center}
   .cert-meta{grid-template-columns:1fr}
 }
-
-
-
 </style>
 </head>
 <body>
@@ -213,6 +212,8 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
   <h2 class="section-title">Who I Am</h2>
   <div class="about-grid fade-up">
     <div class="about-text">
+      <!-- PORTRAIT IMAGE -->
+      <img src="potrait.jpeg" alt="Mohamad Alif Ridzuan" class="about-portrait">
       <p>I am a <strong>Computer Science (Computing Infrastructure)</strong> student at Universiti Sains Malaysia, working toward a career in <strong>Digital Forensics and Cybersecurity</strong>. I am drawn to the investigative side of security — understanding how attacks work and building tools to detect them.</p>
       <p>My approach is hands-on. I compete in CTF competitions, build tools that solve real problems, and study the threats actually affecting people around me, like the APK-based banking scams targeting Malaysians every day.</p>
       <p>Currently on industrial training and freshly certified with <strong>CompTIA Security+</strong>, with daily practice on TryHackMe to keep skills sharp.</p>
@@ -283,7 +284,6 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
 </footer>
 
 <script>
-// 1. THE CONFIGURATION OBJECT
 const PORTFOLIO_DATA = {
   stats: [
     { num: "3.70", label: "CGPA" },
@@ -329,13 +329,13 @@ const PORTFOLIO_DATA = {
       links: [{ url: "#", text: "Details", featured: false }]
     }
   ],
- competitions: [
+  competitions: [
     { 
       rank: "TOP<br>12", 
       rankStyle: "", 
       name: "NERaca 3.0 CTF", 
       org: "Cyres USM", 
-      image: "", // Add your image path here
+      image: "",
       skills: ["Web Exploitation", "SQL Injection", "Digital Forensics"] 
     },
     { 
@@ -343,7 +343,7 @@ const PORTFOLIO_DATA = {
       rankStyle: "font-size:22px;padding-top:6px", 
       name: "NEXSEC 2025", 
       org: "MCMC · Intervarsity Cyber Forensics", 
-      image: "", // Add your image path here
+      image: "ss_netxect_prep.png",
       skills: ["Volatility 3", "Memory Forensics", "Malware Analysis", "C2 Detection"] 
     },
     { 
@@ -351,7 +351,7 @@ const PORTFOLIO_DATA = {
       rankStyle: "font-size:22px;padding-top:6px", 
       name: "BINGO CTF", 
       org: "Asia Pacific University (APU)", 
-      image: "Images/CTF.JPG", // Leave blank if you don't have one
+      image: "Images/CTF.JPG",
       skills: ["Web Exploitation", "Digital Forensics", "OSINT"] 
     }
   ],
@@ -377,6 +377,7 @@ const PORTFOLIO_DATA = {
       date: "Mar 2026 –<br>Aug 2026",
       title: "Industrial Training",
       company: "Awantec · Cybersecurity Division",
+      image: "",
       bullets: [
         "Applying academic cybersecurity knowledge in a professional environment",
         "Developing personal security tooling alongside industry work",
@@ -387,6 +388,7 @@ const PORTFOLIO_DATA = {
       date: "2023 – 2025",
       title: "Part-Time Printing Assistant",
       company: "Better Print",
+      image: "",
       bullets: [
         "Operated and maintained printing equipment",
         "Managed customer orders under time constraints while maintaining quality"
@@ -396,6 +398,7 @@ const PORTFOLIO_DATA = {
       date: "2022 – 2023",
       title: "Media & Technical Executive",
       company: "Majlis Penghuni Desasiswa Indah Kembara",
+      image: "mpd.jpeg",
       bullets: [
         "Designed visual materials for organizational outreach",
         "Handled PA systems, live-streaming broadcasts, and projector setups"
@@ -404,20 +407,16 @@ const PORTFOLIO_DATA = {
   ]
 };
 
-// 2. RENDERING LOGIC
 function renderPortfolio() {
   
-  // Render Stats
   document.getElementById('stats-container').innerHTML = PORTFOLIO_DATA.stats.map(s => `
     <div class="stat-item"><div class="stat-num">${s.num}</div><div class="stat-label">${s.label}</div></div>
   `).join('');
 
-  // Render About Info
   document.getElementById('about-info-container').innerHTML = PORTFOLIO_DATA.aboutInfo.map(i => `
     <div class="info-row"><span class="info-key">${i.key}</span><span class="info-val">${i.val}</span></div>
   `).join('');
 
-  // Render Skills
   document.getElementById('skills-container').innerHTML = PORTFOLIO_DATA.skills.map(s => `
     <div class="skill-card">
       <div class="skill-card-icon">${s.icon}</div>
@@ -426,7 +425,6 @@ function renderPortfolio() {
     </div>
   `).join('');
 
-  // Render Projects
   document.getElementById('projects-container').innerHTML = PORTFOLIO_DATA.projects.map(p => `
     <div class="project-item fade-up">
       <div>
@@ -441,20 +439,16 @@ function renderPortfolio() {
     </div>
   `).join('');
 
- // Render Competitions
   document.getElementById('competitions-container').innerHTML = PORTFOLIO_DATA.competitions.map(c => `
     <div class="comp-card">
       <div class="comp-rank" style="${c.rankStyle}">${c.rank}</div>
-      
       ${c.image ? `<img src="${c.image}" alt="${c.name}" class="comp-image">` : ''}
-      
       <div class="comp-name">${c.name}</div>
       <div class="comp-org">${c.org}</div>
       <div class="comp-skills">${c.skills.map(skill => `<span class="comp-skill">${skill}</span>`).join('')}</div>
     </div>
   `).join('');
 
-  // Render Certifications
   document.getElementById('certifications-container').innerHTML = PORTFOLIO_DATA.certifications.map(c => `
     <div class="cert-card">
       <div class="cert-card-top">
@@ -485,7 +479,6 @@ function renderPortfolio() {
     </div>
   `).join('');
 
-  // Render Experience
   document.getElementById('experience-container').innerHTML = PORTFOLIO_DATA.experience.map(e => `
     <div class="exp-item">
       <div class="exp-date">${e.date}</div>
@@ -495,15 +488,14 @@ function renderPortfolio() {
         <ul class="exp-bullets">
           ${e.bullets.map(b => `<li>${b}</li>`).join('')}
         </ul>
+        ${e.image ? `<img src="${e.image}" alt="${e.title}" class="exp-image">` : ''}
       </div>
     </div>
   `).join('');
 }
 
-// Render dynamic content *before* setting up the IntersectionObserver
 renderPortfolio();
 
-// Cursor Logic
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 
@@ -514,13 +506,11 @@ document.addEventListener('mousemove', function(e) {
   ring.style.top = e.clientY + 'px';
 });
 
-// Since we dynamically injected links/buttons, we have to attach hover listeners afterward
 document.querySelectorAll('a, button').forEach(function(el) {
   el.addEventListener('mouseenter', function() { cursor.classList.add('hover'); ring.classList.add('hover'); });
   el.addEventListener('mouseleave', function() { cursor.classList.remove('hover'); ring.classList.remove('hover'); });
 });
 
-// Typewriter Logic
 var roles = [
   'Digital Forensics Enthusiast',
   'Malware Analyst (in progress)',
@@ -544,12 +534,10 @@ function type() {
 }
 type();
 
-// Scroll fade-in (IntersectionObserver)
 var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.15 });
 
-// Observe the original and newly injected `.fade-up` elements
 document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
 </script>
 </body>
