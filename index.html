@@ -150,9 +150,32 @@ section{padding:100px 60px;position:relative;z-index:1}
 .exp-bullets{list-style:none}
 .exp-bullets li{font-size:14px;color:var(--text2);line-height:1.7;padding:4px 0 4px 20px;position:relative}
 .exp-bullets li::before{content:'›';position:absolute;left:0;color:var(--accent);font-size:16px}
-.exp-image{width:60%;border-radius:6px;border:1px solid var(--accent-border);margin-top:16px;object-fit:cover;aspect-ratio:16/9;display:block}
+.exp-image{width:20%;border-radius:6px;border:1px solid var(--accent-border);margin-top:16px;object-fit:cover;aspect-ratio:16/9;display:block}
 
-#contact{background:var(--bg);text-align:center}
+/* ─── WRITE-UPS ──────────────────────────────────────── */
+#writeups{background:var(--bg)}
+.writeup-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+.writeup-card{position:relative;border:1px solid var(--accent-border);border-radius:8px;padding:28px;background:var(--bg2);transition:all 0.3s;overflow:hidden}
+.writeup-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--accent),transparent);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.writeup-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,229,160,0.07)}
+.writeup-card:hover::before{transform:scaleX(1)}
+.writeup-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.writeup-category{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:4px 10px;border-radius:2px;background:rgba(0,229,160,0.06);border:1px solid var(--accent-border);color:var(--accent)}
+.writeup-date{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:0.05em}
+.writeup-title{font-size:17px;font-weight:700;margin-bottom:8px;line-height:1.3;letter-spacing:-0.01em}
+.writeup-event{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.08em;margin-bottom:12px}
+.writeup-desc{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:20px}
+.writeup-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.writeup-tag{font-family:var(--mono);font-size:9px;padding:3px 8px;border-radius:2px;background:rgba(255,78,106,0.06);border:1px solid rgba(255,78,106,0.15);color:#ff9eb0;letter-spacing:0.05em}
+.writeup-footer{display:flex;gap:10px;align-items:center}
+.writeup-link{font-family:var(--mono);font-size:10px;text-decoration:none;letter-spacing:0.08em;padding:8px 16px;border-radius:3px;transition:all 0.2s}
+.writeup-link.primary{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent)}
+.writeup-link.primary:hover{background:var(--accent);color:var(--bg)}
+.writeup-link.secondary{border:1px solid var(--text3);color:var(--text3)}
+.writeup-link.secondary:hover{border-color:var(--accent);color:var(--accent)}
+/* ───────────────────────────────────────────────────── */
+
+#contact{background:var(--bg2);text-align:center}
 .contact-inner{max-width:600px;margin:0 auto}
 .contact-inner p{font-size:16px;color:var(--text2);line-height:1.8;margin-bottom:48px}
 .contact-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:32px}
@@ -168,7 +191,7 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
 @media(max-width:768px){
   nav{padding:16px 24px}.nav-links{display:none}
   #hero{padding:120px 24px 60px}section{padding:80px 24px}
-  .about-grid,.skills-grid,.comp-grid{grid-template-columns:1fr}
+  .about-grid,.skills-grid,.comp-grid,.writeup-grid{grid-template-columns:1fr}
   .project-item{grid-template-columns:1fr}.exp-item{grid-template-columns:1fr;gap:8px}
   .hero-stats{gap:32px}footer{flex-direction:column;gap:8px;text-align:center}
   .cert-meta{grid-template-columns:1fr}
@@ -188,6 +211,7 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
     <a href="#projects">Projects</a>
     <a href="#competitions">CTF</a>
     <a href="#certifications">Certs</a>
+    <a href="#writeups">Write-Ups</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -213,7 +237,6 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
   <h2 class="section-title">Who I Am</h2>
   <div class="about-grid fade-up">
     <div class="about-left">
-      <!-- PORTRAIT IMAGE -->
       <img src="Images/potrait.jpg" alt="Mohamad Alif Ridzuan" class="about-portrait">
       <div class="about-text">
         <p>I am a <strong>Computer Science (Computing Infrastructure)</strong> student at Universiti Sains Malaysia, working toward a career in <strong>Digital Forensics and Cybersecurity</strong>. I am drawn to the investigative side of security — understanding how attacks work and building tools to detect them.</p>
@@ -221,54 +244,48 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
         <p>Currently on industrial training and freshly certified with <strong>CompTIA Security+</strong>, with daily practice on TryHackMe to keep skills sharp.</p>
       </div>
     </div>
-    
     <div class="about-info" id="about-info-container"></div>
-    
   </div>
 </section>
 
 <section id="skills">
   <div class="section-label">02 · Skills</div>
   <h2 class="section-title">Technical Stack</h2>
-  
   <div class="skills-grid fade-up" id="skills-container"></div>
-  
 </section>
 
 <section id="projects">
   <div class="section-label">03 · Projects</div>
   <h2 class="section-title">Things I've Built</h2>
-
   <div id="projects-container"></div>
-
 </section>
 
 <section id="competitions">
   <div class="section-label">04 · Competitions</div>
   <h2 class="section-title">CTF & Challenges</h2>
-  
   <div class="comp-grid fade-up" id="competitions-container"></div>
-  
 </section>
 
 <section id="certifications">
   <div class="section-label">05 · Certifications</div>
   <h2 class="section-title">Credentials</h2>
-  
   <div class="cert-grid fade-up" id="certifications-container"></div>
-
 </section>
 
 <section id="experience">
   <div class="section-label">06 · Experience</div>
   <h2 class="section-title">Where I've Been</h2>
-  
   <div class="fade-up" id="experience-container"></div>
-  
+</section>
+
+<section id="writeups">
+  <div class="section-label">07 · Write-Ups & Docs</div>
+  <h2 class="section-title">Documentation</h2>
+  <div class="writeup-grid fade-up" id="writeups-container"></div>
 </section>
 
 <section id="contact">
-  <div class="section-label" style="justify-content:center">07 · Contact</div>
+  <div class="section-label" style="justify-content:center">08 · Contact</div>
   <h2 class="section-title" style="text-align:center">Let's Connect</h2>
   <div class="contact-inner fade-up">
     <p>I'm currently on industrial training and open to connecting with professionals in cybersecurity and digital forensics, especially in Malaysia. If you have opportunities, feedback on my projects, or just want to talk security, reach out.</p>
@@ -290,7 +307,7 @@ footer span{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spa
 const PORTFOLIO_DATA = {
   stats: [
     { num: "3.70", label: "CGPA" },
-    { num: "3x", label: "CTF Competitions" },
+    { num: "4x", label: "CTF Competitions" },
     { num: "10s", label: "APK Triage Time" }
   ],
   aboutInfo: [
@@ -333,29 +350,37 @@ const PORTFOLIO_DATA = {
     }
   ],
   competitions: [
-    { 
-      rank: "TOP<br>12", 
-      rankStyle: "", 
-      name: "NERaca 3.0 CTF", 
-      org: "Cyres USM", 
-      image: "",
-      skills: ["Web Exploitation", "SQL Injection", "Digital Forensics"] 
+    {
+      rank: "TOP 12",
+      rankStyle: "",
+      name: "NERaca 3.0 CTF",
+      org: "Cyres USM",
+      image: "Images/neraca.JPG",
+      skills: ["Web Exploitation", "SQL Injection", "Digital Forensics"]
     },
-    { 
-      rank: "FINALIST", 
-      rankStyle: "font-size:22px;padding-top:6px", 
-      name: "NEXSEC 2025", 
-      org: "MCMC · Intervarsity Cyber Forensics", 
+    {
+      rank: "FINALIST",
+      rankStyle: "font-size:22px;padding-top:6px",
+      name: "NEXSEC 2025",
+      org: "MCMC · Intervarsity Cyber Forensics",
       image: "Images/ss_netxect_prep.png",
-      skills: ["Volatility 3", "Memory Forensics", "Malware Analysis", "C2 Detection"] 
+      skills: ["Volatility 3", "Memory Forensics", "Malware Analysis", "C2 Detection"]
     },
-    { 
-      rank: "COMPETED", 
-      rankStyle: "font-size:22px;padding-top:6px", 
-      name: "BINGO CTF", 
-      org: "Asia Pacific University (APU)", 
+    {
+      rank: "COMPETED",
+      rankStyle: "font-size:22px;padding-top:6px",
+      name: "BINGO CTF",
+      org: "Asia Pacific University (APU)",
       image: "Images/CTF.JPG",
-      skills: ["Web Exploitation", "Digital Forensics", "OSINT"] 
+      skills: ["Web Exploitation", "Digital Forensics", "OSINT"]
+    },
+    {
+      rank: "COMPETED",
+      rankStyle: "font-size:22px;padding-top:6px",
+      name: "OWASP Liga CTF 2026",
+      org: "OWASP Kuala Lumpur",
+      image: "",
+      skills: ["Windows Event Log Forensics", "C2 Analysis", "Malware Analysis", "Threat Intelligence"]
     }
   ],
   certifications: [
@@ -380,7 +405,7 @@ const PORTFOLIO_DATA = {
       date: "Mar 2026 –<br>Aug 2026",
       title: "Industrial Training",
       company: "Awantec · Cybersecurity Division",
-      image: "",
+      image: "Images/Awantec.JPG",
       bullets: [
         "Applying academic cybersecurity knowledge in a professional environment",
         "Developing personal security tooling alongside industry work",
@@ -407,11 +432,23 @@ const PORTFOLIO_DATA = {
         "Handled PA systems, live-streaming broadcasts, and projector setups"
       ]
     }
+  ],
+  writeups: [
+    {
+      category: "CTF Write-Up",
+      date: "Jun 7, 2026",
+      title: "OWASPKL CTF Week 3 — Malware Series",
+      event: "OWASP Liga CTF 2026 · Week 3",
+      desc: "Full forensic analysis of a Windows Event Log (dump.evtx) from an infected machine. Traced a C2 beacon from initial stager execution through process injection into M365Copilot.exe, payload delivery, and attacker command execution. Nine investigations completed.",
+      tags: ["Windows Forensics", "C2 Analysis", "Malware", "Threat Intel", "Censys", "VirusTotal"],
+      docLink: "Documents/OWASPKL_CTF_Week3_Writeup.pdf",
+      githubLink: ""
+    }
   ]
 };
 
 function renderPortfolio() {
-  
+
   document.getElementById('stats-container').innerHTML = PORTFOLIO_DATA.stats.map(s => `
     <div class="stat-item"><div class="stat-num">${s.num}</div><div class="stat-label">${s.label}</div></div>
   `).join('');
@@ -492,6 +529,23 @@ function renderPortfolio() {
           ${e.bullets.map(b => `<li>${b}</li>`).join('')}
         </ul>
         ${e.image ? `<img src="${e.image}" alt="${e.title}" class="exp-image">` : ''}
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('writeups-container').innerHTML = PORTFOLIO_DATA.writeups.map(w => `
+    <div class="writeup-card">
+      <div class="writeup-card-top">
+        <span class="writeup-category">${w.category}</span>
+        <span class="writeup-date">${w.date}</span>
+      </div>
+      <div class="writeup-title">${w.title}</div>
+      <div class="writeup-event">${w.event}</div>
+      <div class="writeup-desc">${w.desc}</div>
+      <div class="writeup-tags">${w.tags.map(t => `<span class="writeup-tag">${t}</span>`).join('')}</div>
+      <div class="writeup-footer">
+        ${w.docLink ? `<a href="${w.docLink}" target="_blank" class="writeup-link primary">Read Write-Up ↗</a>` : ''}
+        ${w.githubLink ? `<a href="${w.githubLink}" target="_blank" class="writeup-link secondary">GitHub ↗</a>` : ''}
       </div>
     </div>
   `).join('');
