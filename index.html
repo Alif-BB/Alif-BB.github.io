@@ -381,6 +381,15 @@ const PORTFOLIO_DATA = {
       org: "OWASP Kuala Lumpur",
       image: "",
       skills: ["Windows Event Log Forensics", "C2 Analysis", "Malware Analysis", "Threat Intelligence"]
+    },
+
+    {
+      rank: "760th/6744 teams",
+      rankStyle: "font-size:22px;padding-top:6px",
+      name: "Hack The Box Cyber Apocalypse CTF 2026 - The Salt Crown",
+      org: "Hack The Box",
+      image: "Images/HTB .png",
+      skills: ["Windows Event Log Forensics", "C2 Analysis", "Malware Analysis", "Threat Intelligence"]
     }
   ],
   certifications: [
@@ -459,7 +468,18 @@ const PORTFOLIO_DATA = {
       tags: ["Windows Forensics", "C2 Analysis", "Malware", "Threat Intel", "Censys", "VirusTotal"],
       docLink: "Documents/OWASPKL_CTF_Week3_Writeup.pdf",
       githubLink: ""
+    },
+    {
+      category: "CTF Write-Up",
+      date: "July 27, 2026",
+      title: "hackthebox Cyber Apocalypse CTF 2026, The Salt Crown",
+      event: "Hack The Box",
+      desc: "Working purely from Windows Registry artifacts via RegRipper, the investigation traced CROWQUILL's full attack path: deploying KeeFarce to dump credentials from a live KeePass process, enumerating an archive of sensitive oath records, staging the stolen files under Public\Music\saltwork, compressing them into shardchain.tar, and finishing operations from a working directory on the desktop. This demonstrates how registry-based artifacts alone, without any file-system or memory image, can reconstruct a complete timeline of attacker activity",
+      tags: ["Memory Forensics", "Volatility 3", "Malware Analysis", "C2 Detection"],
+      docLink: "Documents/HTB_Salt_Crown_Writeup.pdf",
+      githubLink: ""
     }
+
   ]
 };
 
